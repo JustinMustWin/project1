@@ -1,0 +1,19 @@
+int led = D7;  
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(led, HIGH);   
+  String temp = String(random(80, 90));
+  Particle.publish("temperature", temp, PRIVATE);
+  delay(50000);               
+  digitalWrite(led, LOW);    
+  delay(50000);               
+  digitalWrite(led, HIGH);   
+  String temp = String(random(50, 70));
+  Particle.publish("temperature", temp, PRIVATE);
+  delay(40000);               
+  digitalWrite(led, LOW);    
+  delay(40000);               
